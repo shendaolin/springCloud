@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @RestController
 public class GxyZxdaController {
-
-	@Value("${server.port}")
-	String port;
+	
+	@Value("${spring.cloud.client.ipAddress}")
+	String ip;
 
 	@RequestMapping("/helloWorld")
 	public String home(@RequestParam String name) {
-		return "hi " + name + ",i am from port:" + port;
+		return "hi " + name + ",i am from ip:" + ip;
 	}
 }
